@@ -7,6 +7,21 @@ body {
 }
 
 .header_container {
+  box-shadow: 0px 2px 2px black;
+  position: relative;
+  z-index: 1;
+}
+
+.header_logo_section {
   height: 100px;
   background-color: #000033;
+}
+
+.header_logo_section img {
+  height: 100px;
+}
+
+.header_dropdwn_section {
+  height: 50px;
+  background-color: #007b7f;
 }

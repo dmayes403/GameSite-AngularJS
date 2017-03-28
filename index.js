@@ -23,3 +23,5 @@ module.exports = app;
 
 const controller = require('./srvrControllers/srvrCtrl.js')
 app.get('/getTrendingGames', controller.getTrendingGames);
+// app.get('/getGames/:games', controller.getGames);
+app.get('/getGames', controller.getGames);

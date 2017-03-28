@@ -6,6 +6,11 @@ angular.module('gameSiteApp', ['ui.router'])
           templateUrl: '../home/home.html',
           controller: 'homeCtrl'
         })
+        .state('gameSearch', {
+          url: '/gameSearch/:sql',
+          templateUrl: '../gameSearch/gameSearch.html',
+          controller: 'gameSearchCtrl'
+        })
 
         $urlRouterProvider.otherwise('/');
   })

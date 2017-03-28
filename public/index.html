@@ -6,24 +6,75 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="./home/home.css">
+  <link rel="stylesheet" href="./gameSearch/gameSearch.css">
   <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
   <title>Game Site</title>
 </head>
 <body ng-controller="mainCtrl">
   <header class="header_container">
-    <section class="header_logo_section">
+    <a ui-sref="home"><section class="header_logo_section">
       <h1 class="header_logo_text">Swivel</h1>
       <img class="logoFlat" src="../flatIcons/logoFlat.svg">
-    </section>
+    </section></a>
     <section class="header_dropdwn_section">
       <section class="icon_container">
-        <img class="xboxOneFlat" src="../flatIcons/xboxOneFlatIcon.svg">
-        <img class="xbox360Flat" src="../flatIcons/xbox360Flat.png">
-        <img class="xbox360Flat" src="../flatIcons/xboxFlat.png">
-        <img class="xbox360Flat" src="../flatIcons/SNESFlat.png">
-        <img class="xbox360Flat" src="../flatIcons/N64Flat.png">
-        <img class="WiiUFlat" src="../flatIcons/WiiUFlat.png">
-        <img class="SwitchFlat" src="../flatIcons/SwitchFlat.png">
+        <div class="dropdown">
+          <img class="xboxOneFlat dropbtn" src="../flatIcons/xboxOneFlatIcon.svg">
+          <div class="dropdown-content">
+            <a href="#">Xbox One Console</a>
+            <!-- <a ui-sref="({sql: games})">Xbox One Games</a> -->
+            <a ui-sref="gameSearch">Xbox One Games</a>
+            <a href="#">Xbox One Accessories</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <img class="xboxOneFlat dropbtn" src="../flatIcons/xbox360Flat.png">
+          <div class="dropdown-content">
+            <a href="#">Xbox 360 Console</a>
+            <a href="#">Xbox 360 Games</a>
+            <a href="#">Xbox 360 Accessories</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <img class="xboxOneFlat dropbtn" src="../flatIcons/xboxFlat.png">
+          <div class="dropdown-content">
+            <a href="#">Xbox Console</a>
+            <a href="#">Xbox Games</a>
+            <a href="#">Xbox Accessories</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <img class="xboxOneFlat dropbtn" src="../flatIcons/SNESFlat.png">
+          <div class="dropdown-content">
+            <a href="#">SNES Console</a>
+            <a href="#">SNES Games</a>
+            <a href="#">SNES Accessories</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <img class="xboxOneFlat dropbtn" src="../flatIcons/N64Flat.png">
+          <div class="dropdown-content">
+            <a href="#">N64 Console</a>
+            <a href="#">N64 Games</a>
+            <a href="#">N64 Accessories</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <img class="WiiUFlat dropbtn" src="../flatIcons/WiiUFlat.png">
+          <div class="dropdown-content">
+            <a href="#">Wii U Console</a>
+            <a href="#">Wii U Games</a>
+            <a href="#">Wii U Accessories</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <img class="switchFlat dropbtn" src="../flatIcons/SwitchFlat.png">
+          <div class="dropdown-content switch_dropdown">
+            <a href="#">Switch Console</a>
+            <a href="#">Switch Games</a>
+            <a href="#">Switch Accessories</a>
+          </div>
+        </div>
       </section>
     </section>
   </header>
@@ -44,5 +95,6 @@
   <script src="./controllers/mainCtrl.js"></script>
   <script src="./controllers/mainSrvc.js"></script>
   <script src="./home/homeCtrl.js"></script>
+  <script src="./gameSearch/gameSearchCtrl.js"></script>
 </body>
 </html>

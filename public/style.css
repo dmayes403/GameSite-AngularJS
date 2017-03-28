@@ -7,6 +7,10 @@ body {
   font-family: 'Permanent Marker', cursive;
 }
 
+a {
+  text-decoration: none;
+}
+
 .header_container {
   box-shadow: 0px 2px 2px black;
   position: relative;
@@ -54,6 +58,53 @@ body {
   font-size: 12px;
 }
 
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  border: none;
+  background: none;
+  color: #000033;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 79px;
+  left: -30px;
+  background-color: #F68E1F;
+  min-width: 160px;
+  box-sizing: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.switch_dropdown {
+  display: none;
+  position: absolute;
+  top: 64px;
+  left: -30px;
+  background-color: #F68E1F;
+  min-width: 160px;
+  box-sizing: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-align: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: grey;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 .xboxOneFlat {
   object-fit: contain;
   width: 100px;
@@ -77,7 +128,7 @@ body {
   padding: 0;
 }
 
-.SwitchFlat {
+.switchFlat {
   object-fit: contain;
   width: 70px;
   height: 70px;

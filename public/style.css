@@ -4,6 +4,7 @@
 
 body {
   margin: 0;
+  font-family: 'Permanent Marker', cursive;
 }
 
 .header_container {
@@ -15,6 +16,21 @@ body {
 .header_logo_section {
   height: 100px;
   background-color: #000033;
+  display: flex;
+  color: white;
+}
+
+.header_logo_text {
+  font-size: 58px;
+  font-family: 'Permanent Marker', cursive;
+  line-height: 0;
+  margin-left: 30px;
+  margin-right: 10px;
+}
+
+.logoFlat {
+  object-fit: contain;
+  width: 125px;
 }
 
 .header_logo_section img {
@@ -24,4 +40,57 @@ body {
 .header_dropdwn_section {
   height: 50px;
   background-color: #007b7f;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /*width: 70%;*/
+}
+
+.icon_container {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 12px;
+}
+
+.xboxOneFlat {
+  object-fit: contain;
+  width: 100px;
+  height: 100px;
+  margin: 0;
+  padding: 0;
+}
+
+.xbox360Flat {
+  object-fit: contain;
+  width: 100px;
+  height: 100px;
+  margin: 0;
+  padding: 0;
+}
+.WiiUFlat {
+  object-fit: contain;
+  width: 70px;
+  height: 100px;
+  margin: 0;
+  padding: 0;
+}
+
+.SwitchFlat {
+  object-fit: contain;
+  width: 70px;
+  height: 70px;
+  margin: 0;
+  padding: 0;
+}
+
+.footer_link_box {
+  height: 200px;
+  background-color: #007b7f;
+}
+
+.footer_bottom_box {
+  height: 50px;
+  background-color: #000033;
 }

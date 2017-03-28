@@ -4,7 +4,7 @@ angular.module('gameSiteApp')
         // mainSrvc.getGames($stateParams.games);
         mainSrvc.getGames().then(function(response){
           console.log(response)
-          return response;
+          $scope.gameSearch = response;
         });
       }
 

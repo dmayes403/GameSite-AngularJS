@@ -6,15 +6,19 @@ angular.module('gameSiteApp', ['ui.router'])
           templateUrl: '../home/home.html',
           controller: 'homeCtrl'
         })
+        .state('accessorySearch', {
+          url: '/accessorySearch?platformid',
+          templateUrl: '../accessorySearch/accessorySearch.html',
+          controller: 'accessorySearchCtrl'
+        })
         .state('gameSearch', {
           url: '/gameSearch?platformid&item',
           templateUrl: '../gameSearch/gameSearch.html',
           controller: 'gameSearchCtrl'
         })
-        .state('accessorySearch', {
-          url: '/accessorySearch?platformid',
-          templateUrl: '../accessorySearch.html',
-          controller: 'accessorySearchCtrl'
+        .state('consoleSearch', {
+          url: '/consoleSearch?id',
+          controller: 'consoleSearchCtrl'
         })
         .state('individualItem', {
           url: '/individualItem/:id',

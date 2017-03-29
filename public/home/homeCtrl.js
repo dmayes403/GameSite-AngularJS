@@ -4,7 +4,6 @@ angular.module('gameSiteApp')
     $scope.getTrendingGames = function(){
       mainSrvc.getTrendingGames().then(function(response){
         $scope.trendingGames = response;
-        console.log(response);
       })
     }
 

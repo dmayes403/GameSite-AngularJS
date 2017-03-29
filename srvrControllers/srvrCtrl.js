@@ -22,7 +22,6 @@ module.exports = {
   },
 
   getAccessories: function(req, res){
-    console.log(+req.query.platformid)
     db.get_accessories([+req.query.platformid], function(err, accessories){
       if (err) {
         console.log(err);
@@ -30,6 +29,17 @@ module.exports = {
       }
       console.log(accessories);
       return res.send(accessories)
+    })
+  },
+
+  getConsoles: function (req, res){
+    db.get_consoles(function(err, consoles){
+      if (err) {
+        console.log(err);
+        return res.status(500).send('Internal Server Error')
+      }
+      console.log(consoles);
+      return res.send(consoles)
     })
   }
 

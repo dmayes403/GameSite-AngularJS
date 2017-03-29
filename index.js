@@ -25,3 +25,4 @@ const controller = require('./srvrControllers/srvrCtrl.js')
 app.get('/getTrendingGames', controller.getTrendingGames);
 app.get('/getGames', controller.getGames);
 app.get('/getAccessories', controller.getAccessories);
+app.get('/getConsoles', controller.getConsoles);

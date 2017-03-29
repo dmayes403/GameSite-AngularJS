@@ -4,26 +4,32 @@ angular.module('gameSiteApp', ['ui.router'])
         .state('home', {
           url: '/',
           templateUrl: '../home/home.html',
-          controller: 'homeCtrl'
+          controller: 'homeCtrl',
         })
         .state('accessorySearch', {
           url: '/accessorySearch?platformid',
           templateUrl: '../accessorySearch/accessorySearch.html',
-          controller: 'accessorySearchCtrl'
+          controller: 'accessorySearchCtrl',
         })
         .state('gameSearch', {
-          url: '/gameSearch?platformid&item',
+          // url: '/gameSearch?platformid&item',
+          url: '/gameSearch',
+          params: {
+            platformid: 1,
+            item: 'games',
+          },
           templateUrl: '../gameSearch/gameSearch.html',
-          controller: 'gameSearchCtrl'
+          controller: 'gameSearchCtrl',
         })
         .state('consoleSearch', {
-          url: '/consoleSearch?id',
-          controller: 'consoleSearchCtrl'
+          url: '/consoleSearch',
+          templateUrl: '../consoleSearch/consoleSearch.html',
+          controller: 'consoleSearchCtrl',
         })
         .state('individualItem', {
           url: '/individualItem/:id',
           templateUrl: '../individualItem.html',
-          controller: 'individualItemCtrl'
+          controller: 'individualItemCtrl',
         })
 
         $urlRouterProvider.otherwise('/');

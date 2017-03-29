@@ -10,9 +10,15 @@ module.exports = {
   },
 
   getGames: function(req, res){
-    db.get_xbox_one_games(function(err, games){
-      console.log(err, games)
-      res.send(games);
+    // console.log(req.params);
+    console.log(req.query);
+    db.get_games([+req.query.platformid], function(err, games){
+      if (err) {
+        console.log(err);
+        return res.status(500).send('Internal Server Error')
+      }
+      // console.log(games);
+      return res.send(games);
     })
   }
 

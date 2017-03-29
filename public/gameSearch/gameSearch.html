@@ -1,8 +1,9 @@
+<h1 class="game_search_title">Games</h1>
 <main class="game_search_main">
-  <section class="individual_game_container" ng-repeat="game in gameSearch">
+  <section class="game_search_individual_game_container" ng-repeat="game in gameSearch">
     <h2>{{ game.name }}</h2>
-    <img class="individual_thumbnail" ng-src="{{game.thumbnail}}">
-    <div class="star_rating">&#9734 &#9734 &#9734 &#9734 &#9734</div>
-    <div class="game_price">{{ game.price | currency }}</div>
+    <img class="game_search_individual_thumbnail" ng-src="{{game.thumbnail}}">
+    <div class="game_search_star_rating">&#9734 &#9734 &#9734 &#9734 &#9734</div>
+    <div class="game_search_game_price">{{ game.price | currency }}</div>
   </section>
 </main>

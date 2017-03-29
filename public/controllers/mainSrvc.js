@@ -13,8 +13,8 @@ angular.module('gameSiteApp')
       //   })
       // }
 
-      this.getGames = function(){
-        return $http.get('/getGames').then(function(response){
+      this.getGames = function(consoleType, item){
+        return $http.get('/getGames?platformid=' + consoleType + '&item=' + item).then(function(response){
           return response.data;
         })
       }

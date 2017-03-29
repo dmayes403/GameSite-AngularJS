@@ -1,3 +1,11 @@
+.game_search_title {
+  text-align: center;
+  color: #007b7f;
+  font-size: 48px;
+  margin-top: 70px;
+  font-family: 'Permanent Marker', cursive;
+}
+
 .game_search_main {
   width: 80%;
   border-top: 5px solid #007b7f;
@@ -10,7 +18,7 @@
   justify-content: space-between;
 }
 
-.individual_game_container {
+.game_search_individual_game_container {
   width: 30%;
   /*background-color: #007b7f;*/
   /*background-color: #000033;*/
@@ -21,16 +29,17 @@
   color: #007b7f;
 }
 
-.individual_thumbnail {
+.game_search_individual_thumbnail {
   object-fit: cover;
   /*height: 300px;*/
   width: 60%;
 }
 
-.star_rating {
+.game_search_star_rating {
   font-size: 24px;
 }
 
-.game_price {
+.game_search_game_price {
   font-size: 20px;
+  color: #F68E1F;
 }

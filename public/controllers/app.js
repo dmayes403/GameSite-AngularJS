@@ -7,9 +7,19 @@ angular.module('gameSiteApp', ['ui.router'])
           controller: 'homeCtrl'
         })
         .state('gameSearch', {
-          url: '/gameSearch/:sql',
+          url: '/gameSearch?platformid&item',
           templateUrl: '../gameSearch/gameSearch.html',
           controller: 'gameSearchCtrl'
+        })
+        .state('accessorySearch', {
+          url: '/accessorySearch?platformid',
+          templateUrl: '../accessorySearch.html',
+          controller: 'accessorySearchCtrl'
+        })
+        .state('individualItem', {
+          url: '/individualItem/:id',
+          templateUrl: '../individualItem.html',
+          controller: 'individualItemCtrl'
         })
 
         $urlRouterProvider.otherwise('/');

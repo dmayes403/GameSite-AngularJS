@@ -1,4 +1,4 @@
 select *
 from games
-where platformid = 5
+where platformid = $1
 limit 12

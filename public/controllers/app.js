@@ -27,8 +27,12 @@ angular.module('gameSiteApp', ['ui.router'])
           controller: 'consoleSearchCtrl',
         })
         .state('individualItem', {
-          url: '/individualItem/:id',
-          templateUrl: '../individualItem.html',
+          url: '/individualItem?tableName?itemid',
+          // params: {
+          //   platformid: 1,
+          //   itemid: 1,
+          // },
+          templateUrl: '../individualItem/individualItem.html',
           controller: 'individualItemCtrl',
         })
 

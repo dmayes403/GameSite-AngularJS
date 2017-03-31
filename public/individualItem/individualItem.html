@@ -1,0 +1,26 @@
+<main class="main_individual_item">
+  <section class="individual_item_container">
+    <section class="individual_item_box">
+      <section class="item_box_image">
+        <img ng-src="{{individualItem.thumbnail}}">
+      </section>
+      <section class="item_box_description">
+        <h1>{{individualItem.name}}</h1>
+        <h4>SKU: {{individualItem.id}} </h4>
+        <p>{{individualItem.instock === true ? 'Instock' : 'Out of Stock'}}</p>
+        <p>Description: {{individualItem.description | limitTo: 200}}{{individualItem.description.length > 100 ? '...' : ''}}</p>
+        <p>Players: {{individualItem.player}}</p>
+        <p>Rating: {{individualItem.genre}}</p>
+        <p>Rating: {{individualItem.rating}}</p>
+        <p>Release Date: {{individualItem.releasedate}}</p>
+        <p>Price: {{individualItem.price}}</p>
+        <div class="game_search_star_rating"><span class="1_star stars">&#9734</span><span class="2_star stars">&#9734</span><span class="3_star stars">&#9734</span><span class="4_star stars">&#9734</span><span class="5_star stars">&#9734</span></div>
+      </section>
+    </section>
+    <section class="check_out_individual_item_box">
+      <div class="add_cart">
+        <span>Add To Cart</span>
+      </div>
+    </section>
+  </section>
+</main>

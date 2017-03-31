@@ -2,7 +2,7 @@
 <main class="game_search_main">
   <section class="game_search_individual_game_container" ng-repeat="game in gameSearch">
     <h2>{{ game.name }}</h2>
-    <img class="game_search_individual_thumbnail" ng-src="{{game.thumbnail}}">
+    <a ui-sref="individualItem({tableName: 'games', itemid: game.id})"><img class="game_search_individual_thumbnail" ng-src="{{game.thumbnail}}"></a>
     <div class="game_search_star_rating">&#9734 &#9734 &#9734 &#9734 &#9734</div>
     <div class="game_search_game_price">{{ game.price | currency }}</div>
   </section>

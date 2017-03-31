@@ -11,8 +11,8 @@
   </div>
   <section class="trending_games_container">
     <div class="trending_games_box" ng-repeat="game in trendingGames">
-      <img ng-src="{{game.image_1}}">
-      <div class="trending_game_title">
+      <a ui-sref="individualItem({tableName: 'games', itemid: {{game.id}}})"><img ng-src="{{game.image_1}}">
+      <div class="trending_game_title"></a>
         {{game.name}}
       </div>
     </div>

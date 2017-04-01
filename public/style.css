@@ -11,6 +11,7 @@ body {
 
 a {
   text-decoration: none;
+  color: white;
 }
 
 .header_container {
@@ -23,7 +24,14 @@ a {
   height: 100px;
   background-color: #000033;
   display: flex;
+  justify-content: space-between;
   color: white;
+  padding-left: 25px;
+  padding-right: 50px;
+}
+
+.logo_box {
+  display: flex;
 }
 
 .header_logo_text {
@@ -41,6 +49,30 @@ a {
 
 .header_logo_section img {
   height: 100px;
+}
+
+.search_login {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search_form_box {
+  display: flex;
+  align-items: center;
+}
+
+.search_input {
+  /*width: 100%;*/
+  width: 200px;
+  height: 35px;
+  border-radius: 50px;
+  padding-left: 15px;
+}
+
+.login_logout {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .header_dropdwn_section {

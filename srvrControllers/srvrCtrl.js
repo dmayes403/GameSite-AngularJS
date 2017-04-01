@@ -53,7 +53,27 @@ module.exports = {
       console.log(item);
       return res.send(item)
     })
-  }
+  },
+
+  userSearch: function (req, res){
+    console.log(req.query);
+    db.run(`select *
+      from consoles
+        JOIN games ON games.platformid = consoles.id
+        JOIN accessories ON accessories.platformid = consoles.id
+      where
+        upper(games.platform) like '%${req.query.userSearch}%'
+        or upper(accessories.name) like '%${req.query.userSearch}%'
+        or upper(games.name) like '%${req.query.userSearch}%`
+      , function(err, item){
+      if (err) {
+        console.log(err);
+        return res.status(500).send('Internal Server Error')
+      }
+      console.log(item);
+      return res.send(item)
+    })
+  },
 
 
 }

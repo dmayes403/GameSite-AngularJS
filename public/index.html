@@ -16,9 +16,21 @@
 </head>
 <body ng-controller="mainCtrl">
   <header class="header_container">
-    <a ui-sref="home"><section class="header_logo_section">
-      <h1 class="header_logo_text">Swivel</h1>
-      <img class="logoFlat" src="../flatIcons/logoFlat.svg">
+    <section class="header_logo_section">
+      <a ui-sref="home"><div class="logo_box">
+        <h1 class="header_logo_text">Swivel</h1>
+        <img class="logoFlat" src="../flatIcons/logoFlat.svg">
+      </div></a>
+      <section class="search_login">
+        <div class="search_form_box">
+          <form class="search_form" ng-submit="">
+            <input class="search_input" type="text" placeholder="Search..." ng-model="searchBox">
+          </form>
+        </div>
+        <section class="login_logout">
+          <a href="#">Login</a> // <a href="#">Logout</a>
+        </section>
+      </section>
     </section></a>
     <section class="header_dropdwn_section">
       <section class="icon_container">
@@ -107,5 +119,7 @@
   <script src="./consoleSearch/consoleSearchSrvc.js"></script>
   <script src="./individualItem/individualItemCtrl.js"></script>
   <script src="./individualItem/individualItemSrvc.js"></script>
+  <script src="./userSearch/userSearchCtrl.js"></script>
+  <script src="./userSearch/userSearchSrvc.js"></script>
 </body>
 </html>

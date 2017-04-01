@@ -138,6 +138,10 @@ a {
   padding: 0;
 }
 
+.footer_container {
+  margin-top: 100px;
+}
+
 .footer_link_box {
   height: 200px;
   background-color: #007b7f;

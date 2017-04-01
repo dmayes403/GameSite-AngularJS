@@ -34,7 +34,7 @@
           <img class="xboxOneFlat dropbtn" src="../flatIcons/xbox360Flat.png">
           <div class="dropdown-content">
             <a ui-sref="consoleSearch({id: 5})">Xbox 360 Console</a>
-            <a ui-sref="gameSearch({platformid: 5, item: games})">Xbox 360 Games</a>
+            <a ui-sref="gameSearch({platformid: 5, item: 'games'})">Xbox 360 Games</a>
             <a ui-sref="accessorySearch({platformid: 5})">Xbox 360 Accessories</a>
           </div>
         </div>
@@ -42,7 +42,7 @@
           <img class="xboxOneFlat dropbtn" src="../flatIcons/xboxFlat.png">
           <div class="dropdown-content">
             <a ui-sref="consoleSearch({id: 4})">Xbox Console</a>
-            <a ui-sref="gameSearch({platformid: 4, item: games})">Xbox Games</a>
+            <a ui-sref="gameSearch({platformid: 4, item: 'games'})">Xbox Games</a>
             <a ui-sref="accessorySearch({platformid: 4})">Xbox Accessories</a>
           </div>
         </div>
@@ -50,7 +50,7 @@
           <img class="xboxOneFlat dropbtn" src="../flatIcons/SNESFlat.png">
           <div class="dropdown-content">
             <a ui-sref="consoleSearch({id: 1})">SNES Console</a>
-            <a ui-sref="gameSearch({platformid: 1, item: games})">SNES Games</a>
+            <a ui-sref="gameSearch({platformid: 1, item: 'games'})">SNES Games</a>
             <a ui-sref="accessorySearch({platformid: 1})">SNES Accessories</a>
           </div>
         </div>
@@ -58,7 +58,7 @@
           <img class="xboxOneFlat dropbtn" src="../flatIcons/N64Flat.png">
           <div class="dropdown-content">
             <a ui-sref="consoleSearch({id: 2})">N64 Console</a>
-            <a ui-sref="gameSearch({platformid: 2, item: games})">N64 Games</a>
+            <a ui-sref="gameSearch({platformid: 2, item: 'games'})">N64 Games</a>
             <a ui-sref="accessorySearch({platformid: 2})">N64 Accessories</a>
           </div>
         </div>
@@ -66,7 +66,7 @@
           <img class="WiiUFlat dropbtn" src="../flatIcons/WiiUFlat.png">
           <div class="dropdown-content">
             <a ui-sref="consoleSearch({id: 3})">Wii U Console</a>
-            <a ui-sref="gameSearch({platformid: 3, item: games})">Wii U Games</a>
+            <a ui-sref="gameSearch({platformid: 3, item: 'games'})">Wii U Games</a>
             <a ui-sref="accessorySearch({platformid: 3})">Wii U Accessories</a>
           </div>
         </div>
@@ -74,7 +74,7 @@
           <img class="switchFlat dropbtn" src="../flatIcons/SwitchFlat.png">
           <div class="dropdown-content switch_dropdown">
             <a ui-sref="consoleSearch({id: 7})">Switch Console</a>
-            <a ui-sref="gameSearch({platformid: 7, item: games})">Switch Games</a>
+            <a ui-sref="gameSearch({platformid: 7, item: 'games'})">Switch Games</a>
             <a ui-sref="accessorySearch({platformid: 7})">Switch Accessories</a>
           </div>
         </div>
@@ -100,6 +100,7 @@
   <script src="./controllers/filter.js"></script>
   <script src="./home/homeCtrl.js"></script>
   <script src="./gameSearch/gameSearchCtrl.js"></script>
+  <script src="./gameSearch/gameSearchSrvc.js"></script>
   <script src="./accessorySearch/accessorySearchCtrl.js"></script>
   <script src="./accessorySearch/accessorySearchSrvc.js"></script>
   <script src="./consoleSearch/consoleSearchCtrl.js"></script>

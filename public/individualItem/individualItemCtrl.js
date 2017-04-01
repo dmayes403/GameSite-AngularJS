@@ -8,5 +8,8 @@ angular.module('gameSiteApp')
         })
       }
 
+      $scope.shippingDate = new Date();
+      $scope.shippingDate = $scope.shippingDate+2
+
       $scope.getIndividualItem();
     })

@@ -1,8 +1,8 @@
 angular.module('gameSiteApp')
-    .controller('gameSearchCtrl', function($scope, mainSrvc, $stateParams){
+    .controller('gameSearchCtrl', function($scope, gameSearchSrvc, $stateParams){
       $scope.getGames = function(){
         // mainSrvc.getGames($stateParams.games);
-        mainSrvc.getGames($stateParams.platformid, $stateParams.item).then(function(response){
+        gameSearchSrvc.getGames($stateParams.platformid, $stateParams.item).then(function(response){
           $scope.gameSearch = response;
         });
       }

@@ -12,12 +12,12 @@ angular.module('gameSiteApp', ['ui.router'])
           controller: 'accessorySearchCtrl',
         })
         .state('gameSearch', {
-          // url: '/gameSearch?platformid&item',
-          url: '/gameSearch',
-          params: {
-            platformid: 1,
-            item: 'games',
-          },
+          url: '/gameSearch?platformid?item',
+          // url: '/gameSearch',
+          // params: {
+          //   platformid: 1,
+          //   item: 'games',
+          // },
           templateUrl: '../gameSearch/gameSearch.html',
           controller: 'gameSearchCtrl',
         })

@@ -60,18 +60,27 @@ module.exports = {
     console.log(req.params.searchString)
 
     db.run(`select
-		consoles.id
-        ,consoles.platform
-        ,consoles.price
-        ,consoles.releaseDate
-        ,consoles.thumbnail
-        ,games.name
-        ,games.price
-        ,games.releaseDate
-        ,games.thumbnail
-        ,accessories.name
-        ,accessories.price
-        ,accessories.thumbnail
+      consoles.id
+      ,consoles.platform
+      ,consoles.price console_price
+      ,consoles.releaseDate console_releaseDate
+      ,consoles.thumbnail console_thumbnail
+      ,consoles.instock console_instock
+      ,'consoles' consoles_table
+      ,consoles.id console_id
+      ,games.name game_name
+      ,games.price game_price
+      ,games.releaseDate game_releaseDate
+      ,games.thumbnail game_thumbnail
+      ,games.instock game_instock
+      ,'games' games_table
+      ,games.id game_id
+      ,accessories.name accessory_name
+      ,accessories.price accessory_price
+      ,accessories.thumbnail accessory_thumbnail
+      ,accessories.instock accessory_instock
+      ,'accessories' accessories_table
+      ,accessories.id accessory_id
   	from
   		consoles
           left JOIN games ON games.platformid = consoles.id and upper(games.name) like '%${req.params.searchString}%'

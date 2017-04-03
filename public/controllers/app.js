@@ -36,7 +36,7 @@ angular.module('gameSiteApp', ['ui.router'])
           controller: 'individualItemCtrl',
         })
         .state('userSearch', {
-          url: 'userSearch?searchString',
+          url: '/userSearch/:searchString',
           templateUrl: '../userSearch/userSearch.html',
           controller: 'userSearchCtrl',
         })

@@ -27,4 +27,4 @@ app.get('/getGames', controller.getGames);
 app.get('/getAccessories', controller.getAccessories);
 app.get('/getConsoles', controller.getConsoles);
 app.get('/getIndividualItem', controller.getIndividualItem);
-app.get('/userSearch', controller.userSearch);
+app.get('/userSearch/:searchString', controller.userSearch);

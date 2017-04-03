@@ -56,22 +56,34 @@ module.exports = {
   },
 
   userSearch: function (req, res){
-    console.log(req.query);
-    db.run(`select *
-      from consoles
-        JOIN games ON games.platformid = consoles.id
-        JOIN accessories ON accessories.platformid = consoles.id
-      where
-        upper(games.platform) like '%${req.query.userSearch}%'
-        or upper(accessories.name) like '%${req.query.userSearch}%'
-        or upper(games.name) like '%${req.query.userSearch}%`
-      , function(err, item){
+    console.log('-------------%%-----------------%%-------------')
+    console.log(req.params.searchString)
+
+    db.run(`select
+		consoles.id
+        ,consoles.platform
+        ,consoles.price
+        ,consoles.releaseDate
+        ,consoles.thumbnail
+        ,games.name
+        ,games.price
+        ,games.releaseDate
+        ,games.thumbnail
+        ,accessories.name
+        ,accessories.price
+        ,accessories.thumbnail
+  	from
+  		consoles
+          left JOIN games ON games.platformid = consoles.id and upper(games.name) like '%${req.params.searchString}%'
+          left JOIN accessories ON accessories.platformid = consoles.id and upper(accessories.name) like '%${req.params.searchString}%'
+       where (upper(consoles.platform) like '%${req.params.searchString}%' or upper(accessories.name) like '%${req.params.searchString}%' or upper(games.name) like '%${req.params.searchString}%')`
+      , function(err, items){
       if (err) {
         console.log(err);
         return res.status(500).send('Internal Server Error')
       }
-      console.log(item);
-      return res.send(item)
+      console.log(items);
+      return res.send(items)
     })
   },
 

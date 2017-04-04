@@ -6,6 +6,16 @@ angular.module('gameSiteApp', ['ui.router'])
           templateUrl: '../home/home.html',
           controller: 'homeCtrl',
         })
+        .state('login', {
+          url: '/login',
+          templateUrl: '../login/login.html',
+          controller: 'loginCtrl',
+        })
+        .state('signup', {
+          url: '/signup',
+          templateUrl: '../signup/signup.html',
+          controller: 'signupCtrl',
+        })
         .state('accessorySearch', {
           url: '/accessorySearch?platformid',
           templateUrl: '../accessorySearch/accessorySearch.html',
@@ -39,6 +49,11 @@ angular.module('gameSiteApp', ['ui.router'])
           url: '/userSearch/:searchString',
           templateUrl: '../userSearch/userSearch.html',
           controller: 'userSearchCtrl',
+        })
+        .state('cart', {
+          url: '/cart/:customerId',
+          templateUrl: '../cart/cart.html',
+          controller: 'cartCtrl',
         })
 
         $urlRouterProvider.otherwise('/');

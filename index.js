@@ -28,3 +28,4 @@ app.get('/getAccessories', controller.getAccessories);
 app.get('/getConsoles', controller.getConsoles);
 app.get('/getIndividualItem', controller.getIndividualItem);
 app.get('/userSearch/:searchString', controller.userSearch);
+app.get('/getCart/:customerId', controller.getCart);

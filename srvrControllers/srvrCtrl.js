@@ -96,5 +96,17 @@ module.exports = {
     })
   },
 
+  getCart: function (req, res){
+    console.log(req.query);
+    db.run(`select * from cart where customer_id = ${+req.query.id}`, function(err, item){
+      if (err) {
+        console.log(err);
+        return res.status(500).send('Internal Server Error')
+      }
+      console.log(item);
+      return res.send(item)
+    })
+  },
+
 
 }

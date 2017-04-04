@@ -56,9 +56,27 @@ a {
   justify-content: space-between;
 }
 
+.cart {
+  display: flex;
+  align-items: center;
+  margin: 0px 50px;
+}
+
+.cart h3 {
+  margin-left: 15px;
+}
+
+.icon-cart {
+  font-size: 32px;
+}
+
 .search_form_box {
   display: flex;
   align-items: center;
+}
+
+.search_input:focus {
+  outline: 0;
 }
 
 .search_input {

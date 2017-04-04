@@ -5,12 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fonts.css">
   <link rel="stylesheet" href="./home/home.css">
   <link rel="stylesheet" href="./gameSearch/gameSearch.css">
   <link rel="stylesheet" href="./accessorySearch/accessorySearch.css">
   <link rel="stylesheet" href="./consoleSearch/consoleSearch.css">
   <link rel="stylesheet" href="./individualItem/individualItem.css">
   <link rel="stylesheet" href="./userSearch/userSearch.css">
+  <link rel="stylesheet" href="./login/login.css">
+  <link rel="stylesheet" href="./signup/signup.css">
+  <link rel="stylesheet" href="./cart/cart.css">
   <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
   <title>Game Site</title>
@@ -23,13 +27,16 @@
         <img class="logoFlat" src="../flatIcons/logoFlat.svg">
       </div></a>
       <section class="search_login">
+        <div class="cart">
+          <a ui-sref="cart({customerId: 1})"><span class="icon-cart"></span><a ui-sref="cart"><h3>0 items</h3></a>
+        </div>
         <div class="search_form_box">
           <form class="search_form" ng-submit="userSearch(searchBox)">
             <input class="search_input" type="text" placeholder="Search..." ng-model="searchBox">
           </form>
         </div>
         <section class="login_logout">
-          <a href="#">Login</a> // <a href="#">Logout</a>
+          <a ui-sref="login">Login</a> // <a href="#">Logout</a>
         </section>
       </section>
     </section></a>
@@ -122,5 +129,11 @@
   <script src="./individualItem/individualItemSrvc.js"></script>
   <script src="./userSearch/userSearchCtrl.js"></script>
   <script src="./userSearch/userSearchSrvc.js"></script>
+  <script src="./login/loginCtrl.js"></script>
+  <script src="./login/loginSrvc.js"></script>
+  <script src="./signup/signupCtrl.js"></script>
+  <script src="./signup/signupSrvc.js"></script>
+  <script src="./cart/cartCtrl.js"></script>
+  <script src="./cart/cartSrvc.js"></script>
 </body>
 </html>

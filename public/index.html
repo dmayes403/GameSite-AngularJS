@@ -28,7 +28,8 @@
       </div></a>
       <section class="search_login">
         <div class="cart">
-          <a ui-sref="cart({customerId: 1})"><span class="icon-cart"></span><a ui-sref="cart"><h3>0 items</h3></a>
+          <!-- <a ui-sref="cart({customerId: 1})"><span class="icon-cart"></span><a ui-sref="cart"><h3>0 items</h3></a> -->
+          <a ui-sref="cart"><span class="icon-cart"></span><a ui-sref="cart"><h3>0 items</h3></a>
         </div>
         <div class="search_form_box">
           <form class="search_form" ng-submit="userSearch(searchBox)">
@@ -36,7 +37,8 @@
           </form>
         </div>
         <section class="login_logout">
-          <a ui-sref="login">Login</a> // <a href="#">Logout</a>
+          <!-- <a ui-sref="login">Login</a> // <a href="#">Logout</a> -->
+          <a href="/auth/facebook">Login</a> // <a href="/logout">Logout</a>
         </section>
       </section>
     </section></a>

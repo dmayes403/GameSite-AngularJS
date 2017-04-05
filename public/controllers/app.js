@@ -7,7 +7,8 @@ angular.module('gameSiteApp', ['ui.router'])
           controller: 'homeCtrl',
         })
         .state('login', {
-          url: '/login',
+          // url: '/login',
+          url: '/auth/facebook',
           templateUrl: '../login/login.html',
           controller: 'loginCtrl',
         })
@@ -50,8 +51,13 @@ angular.module('gameSiteApp', ['ui.router'])
           templateUrl: '../userSearch/userSearch.html',
           controller: 'userSearchCtrl',
         })
+        // .state('cart', {
+        //   url: '/cart/:customerId',
+        //   templateUrl: '../cart/cart.html',
+        //   controller: 'cartCtrl',
+        // })
         .state('cart', {
-          url: '/cart/:customerId',
+          url: '/cart',
           templateUrl: '../cart/cart.html',
           controller: 'cartCtrl',
         })

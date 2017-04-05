@@ -96,9 +96,88 @@ module.exports = {
     })
   },
 
+  // getCart: function (req, res){
+  //   console.log(req.params);
+  //   console.log('hello');
+  //   db.run(`select
+  // 		    consoles.id
+  //         ,consoles.platform
+  //         ,consoles.price console_price
+  //         ,consoles.releaseDate console_releaseDate
+  //         ,consoles.thumbnail console_thumbnail
+  //         ,consoles.instock console_instock
+  //         ,'consoles' consoles_table
+  //         ,consoles.id console_id
+  //         ,games.name game_name
+  //         ,games.price game_price
+  //         ,games.releaseDate game_releaseDate
+  //         ,games.thumbnail game_thumbnail
+  //         ,games.instock game_instock
+  //         ,'games' games_table
+  //         ,games.id game_id
+  //         ,accessories.name accessory_name
+  //         ,accessories.price accessory_price
+  //         ,accessories.thumbnail accessory_thumbnail
+  //         ,accessories.instock accessory_instock
+  //         ,'accessories' accessories_table
+  //         ,accessories.id accessory_id
+  //         ,customer.firstName
+  //         ,customer.lastName
+  //         ,customer.email
+  //     	from
+  //     		cart
+  //             LEFT JOIN accessories ON accessories.id = cart.accessory_id
+  //             LEFT JOIN games ON games.id = cart.game_id
+  //             LEFT JOIN consoles ON consoles.id = console_id
+  //             LEFT JOIN customer ON customer.id = customer_id
+  //         where customer_id = ${+req.params.customerId}` , function(err, item){
+  //     if (err) {
+  //       console.log(err);
+  //       return res.status(500).send('Internal Server Error')
+  //     }
+  //     console.log(item);
+  //     return res.send(item)
+  //   })
+  // },
+
+
+
   getCart: function (req, res){
-    console.log(req.query);
-    db.run(`select * from cart where customer_id = ${+req.query.id}`, function(err, item){
+    console.log(typeof req.user.id, parseInt(req.user.id));
+    // console.log(req.params);
+    // console.log('hello');
+    db.run(`select
+  		    consoles.id
+          ,consoles.platform
+          ,consoles.price console_price
+          ,consoles.releaseDate console_releaseDate
+          ,consoles.thumbnail console_thumbnail
+          ,consoles.instock console_instock
+          ,'consoles' consoles_table
+          ,consoles.id console_id
+          ,games.name game_name
+          ,games.price game_price
+          ,games.releaseDate game_releaseDate
+          ,games.thumbnail game_thumbnail
+          ,games.instock game_instock
+          ,'games' games_table
+          ,games.id game_id
+          ,accessories.name accessory_name
+          ,accessories.price accessory_price
+          ,accessories.thumbnail accessory_thumbnail
+          ,accessories.instock accessory_instock
+          ,'accessories' accessories_table
+          ,accessories.id accessory_id
+          ,customer.firstName
+          ,customer.lastName
+          ,customer.email
+      	from
+      		cart
+              LEFT JOIN accessories ON accessories.id = cart.accessory_id
+              LEFT JOIN games ON games.id = cart.game_id
+              LEFT JOIN consoles ON consoles.id = console_id
+              LEFT JOIN customer ON customer.id = customer_id
+          where customer.facebookid = '${req.user.id}'` , function(err, item){
       if (err) {
         console.log(err);
         return res.status(500).send('Internal Server Error')
@@ -107,6 +186,15 @@ module.exports = {
       return res.send(item)
     })
   },
+
+
+
+
+
+  // getFacebookID: function(req, res){
+  //   console.log(req.user.id);
+  //     res.send(req.user);
+  // }
 
 
 }

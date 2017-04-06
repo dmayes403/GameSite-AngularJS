@@ -20,7 +20,8 @@
     <section class="check_out_individual_item_box">
       <p class="individualItem_price"><span class="bold">Price:</span> {{individualItem.price | currency}}</p>
       <p class="individualItem_instock">{{individualItem.instock === true ? 'In stock' : 'Out of Stock'}}</p>
-      <div class="add_cart" ng-click="addToCart(individualItem.id, individualItem.platformid, 'games'); alertCartAdd(individualItem.name)">
+      <!-- <div class="add_cart" ng-click="addToCart(individualItem.id, individualItem.platformid, 'games'); alertCartAdd(individualItem.name)"> -->
+      <div class="add_cart" ng-click="addToCart(null, individualItem.id, individualItem.platformid); alertCartAdd(individualItem.name)">
         <span>Add To Cart</span>
         <!-- <span>Add To Cart</span> -->
       </div>
@@ -48,7 +49,8 @@
     <section class="check_out_individual_item_box">
       <p class="individualItem_price">Price: {{individualItem.price | currency}}</p>
       <p class="individualItem_instock">{{individualItem.instock === true ? 'In stock' : 'Out of Stock'}}</p>
-      <div class="add_cart" ng-click="addToCart(individualItem.id, individualItem.platformid, 'accessories')">
+      <!-- <div class="add_cart" ng-click="addToCart(individualItem.id, individualItem.platformid, 'accessories')"> -->
+      <div class="add_cart" ng-click="addToCart(individualItem.id, null, individualItem.platformid); alertCartAdd(individualItem.name)">
         <span>Add To Cart</span>
         <!-- <span>Add To Cart</span> -->
       </div>
@@ -77,7 +79,8 @@
     <section class="check_out_individual_item_box">
       <p class="individualItem_price">Price: {{individualItem.price | currency}}</p>
       <p class="individualItem_instock">{{individualItem.instock === true ? 'In stock' : 'Out of Stock'}}</p>
-      <div class="add_cart" ng-click="addToCart(individualItem.id, individualItem.platformid, 'consoles')">
+      <!-- <div class="add_cart" ng-click="addToCart(individualItem.id, individualItem.platformid, 'consoles')"> -->
+      <div class="add_cart" ng-click="addToCart(null, null, individualItem.platformid); alertCartAdd(individualItem.name)">
         <span>Add To Cart</span>
         <!-- <span>Add To Cart</span> -->
       </div>

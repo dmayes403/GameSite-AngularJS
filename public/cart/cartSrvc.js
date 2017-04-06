@@ -6,7 +6,7 @@ angular.module('gameSiteApp')
         //   })
         // }
 
-        this.getCart = function(id){
+        this.getCart = function(){
           return $http.get('/getCart').then(function(response){
             return response.data
           })

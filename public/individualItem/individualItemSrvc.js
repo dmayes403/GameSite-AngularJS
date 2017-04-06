@@ -6,8 +6,12 @@ angular.module('gameSiteApp')
         })
       }
 
-      this.addToCart = function(itemID, platformid, table){
-        $http.put('/addToCart', {itemID:itemID, platformid:platformid, tableName: table})
+      // this.addToCart = function(itemID, platformid, table){
+      //   $http.put('/addToCart', {itemID:itemID, platformid:platformid, tableName: table})
+      // }
+
+      this.addToCart = function(accessoryID, gameID, consoleID){
+        $http.put('/addToCart', {accessoryID:accessoryID, gameID:gameID, consoleID:consoleID})
       }
 
       // this.addToCart = function(){

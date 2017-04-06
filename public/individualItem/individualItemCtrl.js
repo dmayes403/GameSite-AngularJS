@@ -10,9 +10,14 @@ angular.module('gameSiteApp')
 
       $scope.getIndividualItem();
 
-      $scope.addToCart = function(itemID, platformid, table){
-        console.log(itemID,platformid, table);
-        individualItemSrvc.addToCart(itemID,platformid, table);
+      // $scope.addToCart = function(itemID, platformid, table){
+      //   console.log(itemID,platformid, table);
+      //   individualItemSrvc.addToCart(itemID,platformid, table);
+      // }
+
+      $scope.addToCart = function(accessoryID, itemID, consoleID){
+        console.log(accessoryID, itemID, consoleID);
+        individualItemSrvc.addToCart(accessoryID, itemID, consoleID);
       }
 
       $scope.alertCartAdd = function(itemName){

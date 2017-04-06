@@ -66,6 +66,11 @@ a {
   margin-left: 15px;
 }
 
+.cartCounter {
+  font-size: 24px;
+  margin: 0px 5px 0px 5px;
+}
+
 .icon-cart {
   font-size: 32px;
 }

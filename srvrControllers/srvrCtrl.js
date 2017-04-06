@@ -193,7 +193,9 @@ module.exports = {
   // }
 
   addToCart: function(req, res){
-    db.run(`insert into cart (facebook_id, game_id, console_id) values ('${req.user.id}', ${req.body.itemID}, ${req.body.platformid})`
+    // db.run(`insert into cart (facebook_id, game_id, console_id) values ('${req.user.id}', ${req.body.itemID}, ${req.body.platformid})`
+    db.run(`insert into cart (facebook_id, accessory_id, game_id, console_id)
+              values ('${req.user.id}', ${req.body.accessoryID}, ${req.body.gameID}, ${req.body.consoleID})`
     , function(err, item){
           if (err) {
             console.log(err);

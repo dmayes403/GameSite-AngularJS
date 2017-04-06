@@ -176,7 +176,8 @@ module.exports = {
               LEFT JOIN games ON games.id = cart.game_id
               LEFT JOIN consoles ON consoles.id = console_id
               LEFT JOIN customer ON customer.facebookid = facebook_id
-          where customer.facebookid = '${req.user.id}'` , function(err, item){
+          where customer.facebookid = '${req.user.id}'
+          order by id desc` , function(err, item){
       if (err) {
         console.log(err);
         return res.status(500).send('Internal Server Error')

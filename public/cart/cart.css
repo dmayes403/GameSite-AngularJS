@@ -21,6 +21,8 @@
 
 .deleteItem {
   color: red;
+  cursor: pointer;
+  font-size: 12px;
 }
 
 .cartList_info_container {

@@ -20,7 +20,7 @@
     <section class="check_out_individual_item_box">
       <p class="individualItem_price"><span class="bold">Price:</span> {{individualItem.price | currency}}</p>
       <p class="individualItem_instock">{{individualItem.instock === true ? 'In stock' : 'Out of Stock'}}</p>
-      <div class="add_cart" ng-click="addToCart(individualItem.id, individualItem.platformid, 'games')">
+      <div class="add_cart" ng-click="addToCart(individualItem.id, individualItem.platformid, 'games'); alertCartAdd(individualItem.name)">
         <span>Add To Cart</span>
         <!-- <span>Add To Cart</span> -->
       </div>

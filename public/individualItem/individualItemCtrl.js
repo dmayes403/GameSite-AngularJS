@@ -15,4 +15,9 @@ angular.module('gameSiteApp')
         individualItemSrvc.addToCart(itemID,platformid, table);
       }
 
+      $scope.alertCartAdd = function(itemName){
+        console.log(itemName);
+        alert(`${itemName} has been added to your cart!`)
+      }
+
     })

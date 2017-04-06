@@ -5,4 +5,12 @@ angular.module('gameSiteApp')
           return response.data[0];
         })
       }
+
+      this.addToCart = function(itemID, platformid, table){
+        $http.put('/addToCart', {itemID:itemID, platformid:platformid, tableName: table})
+      }
+
+      // this.addToCart = function(){
+      //   $http.put('/addToCart')
+      // }
     })

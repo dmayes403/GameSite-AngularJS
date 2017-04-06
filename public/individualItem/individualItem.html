@@ -1,3 +1,4 @@
+<!-- games -->
 <main class="main_individual_item" ng-show="individualItem.player">
   <section class="individual_item_container">
     <section class="individual_item_box">
@@ -19,8 +20,9 @@
     <section class="check_out_individual_item_box">
       <p class="individualItem_price"><span class="bold">Price:</span> {{individualItem.price | currency}}</p>
       <p class="individualItem_instock">{{individualItem.instock === true ? 'In stock' : 'Out of Stock'}}</p>
-      <div class="add_cart">
+      <div class="add_cart" ng-click="addToCart(individualItem.id, individualItem.platformid, 'games')">
         <span>Add To Cart</span>
+        <!-- <span>Add To Cart</span> -->
       </div>
       <p>Ships from and sold by Swivel.com</p>
       <p><span class="bold">Shipping to:</span> {{'' === true ? 'Zip Code' : 'Sign in to have item shipped.'}}
@@ -28,7 +30,7 @@
   </section>
 </main>
 
-
+<!-- accessories -->
 <main class="main_individual_item" ng-show="!individualItem.player && !individualItem.platform">
   <section class="individual_item_container">
     <section class="individual_item_box">
@@ -46,8 +48,9 @@
     <section class="check_out_individual_item_box">
       <p class="individualItem_price">Price: {{individualItem.price | currency}}</p>
       <p class="individualItem_instock">{{individualItem.instock === true ? 'In stock' : 'Out of Stock'}}</p>
-      <div class="add_cart">
+      <div class="add_cart" ng-click="addToCart(individualItem.id, individualItem.platformid, 'accessories')">
         <span>Add To Cart</span>
+        <!-- <span>Add To Cart</span> -->
       </div>
       <p>Ships from and sold by Swivel.com</p>
       <p><span class="bold">Shipping to:</span> {{'' === true ? 'Zip Code' : 'Sign in to have item shipped.'}}
@@ -55,7 +58,7 @@
   </section>
 </main>
 
-
+<!-- consoles -->
 <main class="main_individual_item" ng-show="individualItem.platform">
   <section class="individual_item_container">
     <section class="individual_item_box">
@@ -74,8 +77,9 @@
     <section class="check_out_individual_item_box">
       <p class="individualItem_price">Price: {{individualItem.price | currency}}</p>
       <p class="individualItem_instock">{{individualItem.instock === true ? 'In stock' : 'Out of Stock'}}</p>
-      <div class="add_cart">
+      <div class="add_cart" ng-click="addToCart(individualItem.id, individualItem.platformid, 'consoles')">
         <span>Add To Cart</span>
+        <!-- <span>Add To Cart</span> -->
       </div>
       <p>Ships from and sold by Swivel.com</p>
       <p><span class="bold">Shipping to:</span> {{'' === true ? 'Zip Code' : 'Sign in to have item shipped.'}}

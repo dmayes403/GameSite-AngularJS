@@ -62,3 +62,4 @@ app.get('/userSearch/:searchString', controller.userSearch);
 // app.get('/getCart/:customerId', controller.getCart);
 // app.get('/getFacebookID', controller.getFacebookID);
 app.get('/getCart', controller.getCart);
+app.put('/addToCart', controller.addToCart);

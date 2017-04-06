@@ -8,8 +8,11 @@ angular.module('gameSiteApp')
         })
       }
 
-      $scope.shippingDate = new Date();
-      $scope.shippingDate = $scope.shippingDate+2
-
       $scope.getIndividualItem();
+
+      $scope.addToCart = function(itemID, platformid, table){
+        console.log(itemID,platformid, table);
+        individualItemSrvc.addToCart(itemID,platformid, table);
+      }
+
     })

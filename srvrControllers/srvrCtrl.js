@@ -44,7 +44,6 @@ module.exports = {
   },
 
   getIndividualItem: function (req, res){
-    console.log(req.query);
     db.run(`select * from ${req.query.tableName} where id = ${+req.query.itemid}`, function(err, item){
       if (err) {
         console.log(err);
@@ -187,14 +186,23 @@ module.exports = {
     })
   },
 
-
-
-
-
   // getFacebookID: function(req, res){
   //   console.log(req.user.id);
   //     res.send(req.user);
   // }
+
+  addToCart: function(req, res){
+    console.log(req.body)
+    console.log(req.user.id)
+    db.run(`insert into cart (facebook_id, game_id, console_id) values ('${req.user.id}', ${req.body.itemID}, ${req.body.platformid})`
+    , function(err, item){
+          if (err) {
+            console.log(err);
+            return res.status(500).send('Internal Server Error')
+          }
+          console.log(item);
+          })
+  }
 
 
 }

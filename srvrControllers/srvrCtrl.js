@@ -175,7 +175,7 @@ module.exports = {
               LEFT JOIN accessories ON accessories.id = cart.accessory_id
               LEFT JOIN games ON games.id = cart.game_id
               LEFT JOIN consoles ON consoles.id = console_id
-              LEFT JOIN customer ON customer.id = customer_id
+              LEFT JOIN customer ON customer.facebookid = facebook_id
           where customer.facebookid = '${req.user.id}'` , function(err, item){
       if (err) {
         console.log(err);
@@ -192,9 +192,25 @@ module.exports = {
   // }
 
   addToCart: function(req, res){
+    db.run(`insert into cart (facebook_id, game_id, console_id) values ('${req.user.id}', ${req.body.itemID}, ${req.body.platformid})`
+    , function(err, item){
+          if (err) {
+            console.log(err);
+            return res.status(500).send('Internal Server Error')
+          }
+          console.log(item);
+          })
+  },
+
+  deleteCartItem: function(req, res){
     console.log(req.body)
     console.log(req.user.id)
-    db.run(`insert into cart (facebook_id, game_id, console_id) values ('${req.user.id}', ${req.body.itemID}, ${req.body.platformid})`
+    db.run(`delete from cart
+            where
+              (accessory_id is null or accessory_id = ${req.body.accessoryID})
+              and (game_id is null or game_id = ${req.body.itemID})
+              and (console_id is null or console_id = ${req.body.consoleID})
+              and facebook_id = '${req.user.id}'`
     , function(err, item){
           if (err) {
             console.log(err);

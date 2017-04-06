@@ -11,4 +11,9 @@ angular.module('gameSiteApp')
             return response.data
           })
         }
+
+        this.deleteCartItem = function(accessoryID, itemID, consoleID){
+          console.log(accessoryID, itemID, consoleID)
+          $http.put('/deleteCartItem', {accessoryID:accessoryID, itemID:itemID, consoleID:consoleID})
+        }
     })

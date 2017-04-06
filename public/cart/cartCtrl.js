@@ -26,4 +26,9 @@ angular.module('gameSiteApp')
 
         $scope.getCart();
         // $scope.totalValue($scope.customerCart);
+
+        $scope.deleteCartItem = function(accessoryID, itemID, consoleID){
+          cartSrvc.deleteCartItem(accessoryID, itemID, consoleID)
+          $scope.getCart();
+        }
     })

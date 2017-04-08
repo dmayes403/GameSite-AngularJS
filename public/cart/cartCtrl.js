@@ -40,4 +40,15 @@ angular.module('gameSiteApp')
           cartSrvc.deleteCartItem(accessoryID, itemID, consoleID)
           $scope.getCart();
         }
+
+        $scope.makePurchase = function(){
+            cartSrvc.getCart().then(function(response){
+              $scope.cartArr = response;
+              $scope.cartArr.map((item) => {
+                cartSrvc.makePurchase(item.accessory_id,item.game_id,item.console_id);
+                cartSrvc.deleteCartItem(item.accessory_id,item.game_id,item.console_id);
+            })
+            $scope.getCart();
+          })
+        }
     })

@@ -16,4 +16,8 @@ angular.module('gameSiteApp')
           console.log(accessoryID, itemID, consoleID)
           $http.put('/deleteCartItem', {accessoryID:accessoryID, itemID:itemID, consoleID:consoleID})
         }
+
+        this.makePurchase = function(accessoryID, gameID, consoleID){
+          $http.post('/makePurchase', {accessoryID:accessoryID, gameID:gameID, consoleID:consoleID});
+        }
     })

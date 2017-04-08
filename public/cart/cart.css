@@ -6,6 +6,10 @@
   margin-top: 100px;
 }
 
+.customerName {
+  color: #F68E1F;
+}
+
 .cartList_individual {
   display: flex;
   align-items: center;
@@ -88,4 +92,8 @@
 
 .buy_now_box p {
   padding-top: 15px;
+}
+
+.history {
+  color: orange;
 }

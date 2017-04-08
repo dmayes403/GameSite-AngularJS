@@ -1,5 +1,6 @@
 <main class="cartList_main">
-  <h1> Welcome to your cart, {{customerCart[0].firstname}}</h1>
+  <a ui-sref="purchaseHistory"><h1 class="history">History</h1></a>
+  <h1> Welcome to your cart, <span class="customerName">{{customerCart[0].firstname}}</span></h1>
   <section class="cartList_individual" ng-repeat="item in customerCart" ng-show="item.game_thumbnail">
     <a ui-sref="individualItem({tableName:item.games_table, itemid: item.game_id})"><img ng-src="{{item.game_thumbnail}}"></a>
     <section class="info_delete_container">
@@ -54,13 +55,13 @@
     <h1>Sub Total:</h1>
     <p class="cost_description">{{value | currency}}</p>
     <p>Tax: {{value*.07 | currency}}</p>
-    <p class="shipping_cost">Shipping: {{17.50 | currency}}</p>
+    <p class="shipping_cost">Shipping: {{value*.055 | currency}}</p>
     <h2>Total:</h2>
-    <p class="cost_description">{{(value*1.07) + 17.50 | currency}}</p>
+    <p class="cost_description">{{(value*1.07) + (value*.055) | currency}}</p>
     <p>Ships from and sold by Swivel.com</p>
     <p><span class="bold">Shipping to:</span> {{customerCart[0].zip_code}}
     <!-- <p><span class="bold">Shipping to:</span> {{customerCart[0].zip_code === true ? customerCart[0].zip_code : 'Sign in to have item shipped.'}} -->
-    <div class="buy_now_box">
+    <div class="buy_now_box" ng-click="makePurchase()">
       <p>Buy Now</p>
     </div>
   </section>

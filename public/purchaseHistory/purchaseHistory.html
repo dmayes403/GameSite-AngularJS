@@ -1,0 +1,70 @@
+<main class="cartList_main">
+  <h1> Welcome to your purchase history, <span class="customerName">{{customerHistory[0].firstname}}</span></h1>
+  <section class="cartList_individual" ng-repeat="item in customerHistory" ng-show="item.game_thumbnail">
+    <a ui-sref="individualItem({tableName:item.games_table, itemid: item.game_id})"><img ng-src="{{item.game_thumbnail}}"></a>
+    <section class="info_delete_container">
+      <section class="cartList_info_container">
+        <h1 class="cartList_title">{{item.game_name}}</h1>
+        <p class="instock_color">{{item.game_instock === true ? 'In Stock' : 'Out of Stock'}}</p>
+        <p>Price: {{item.game_price | currency}}</p>
+        <p>Release Date: {{item.game_releasedate}}</p>
+        <p>Platform: {{item.platform}}</p>
+        <p>Purchased Date: {{item.log_timestamp | date: longDate}}</p>
+      </section>
+      <!-- <div class="deleteItem" ng-click="deleteCartItem(item.accessory_id, item.game_id, item.id)">
+        <p> Remove [X]</p>
+      </div> -->
+    </section>
+  </section>
+
+
+  <section class="cartList_individual" ng-repeat="item in customerHistory" ng-show="item.accessory_thumbnail && !item.game_thumbnail">
+    <a ui-sref="individualItem({tableName:item.accessories_table, itemid: item.accessory_id})"><img ng-src="{{item.accessory_thumbnail}}"></a>
+    <section class="info_delete_container">
+      <section class="cartList_info_container">
+        <h1 class="cartList_title">{{item.accessory_name}}</h1>
+        <p class="instock_color">{{item.accessory_instock === true ? 'In Stock' : 'Out of Stock'}}</p>
+        <p>Price: {{item.accessory_price | currency}}</p>
+        <p>Release Date: {{item.accessory_releasedate}}</p>
+        <p>Platform: {{item.platform}}</p>
+        <p>Purchased Date: {{item.log_timestamp | date: longDate}}</p>
+      </section>
+      <!-- <div class="deleteItem" ng-click="deleteCartItem(item.accessory_id, item.game_id, item.id)">
+        <p> Remove [X]</p>
+      </div> -->
+    </section>
+  </section>
+
+
+  <section class="cartList_individual" ng-repeat="item in customerHistory" ng-show="item.console_thumbnail && !item.accessory_thumbnail && !item.game_thumbnail">
+    <a ui-sref="individualItem({tableName:item.consoles_table, itemid: item.id})"><img ng-src="{{item.console_thumbnail}}"></a>
+    <section class="info_delete_container">
+      <section class="cartList_info_container">
+        <h1 class="cartList_title">{{item.platform}}</h1>
+        <p class="instock_color">{{item.console_instock === true ? 'In Stock' : 'Out of Stock'}}</p>
+        <p>Price: {{item.console_price | currency}}</p>
+        <p>Release Date: {{item.console_releasedate}}</p>
+        <p>Platform: {{item.platform}}</p>
+        <p>Purchased Date: {{item.log_timestamp | date: longDate}}</p>
+      </section>
+      <!-- <div class="deleteItem" ng-click="deleteCartItem(item.accessory_id, item.game_id, item.id)">
+        <p> Remove [X]</p>
+      </div> -->
+    </section>
+  </section>
+
+  <!-- <section class="total_cost_container">
+    <h1>Sub Total:</h1>
+    <p class="cost_description">{{value | currency}}</p>
+    <p>Tax: {{value*.07 | currency}}</p>
+    <p class="shipping_cost">Shipping: {{17.50 | currency}}</p>
+    <h2>Total:</h2>
+    <p class="cost_description">{{(value*1.07) + 17.50 | currency}}</p>
+    <p>Ships from and sold by Swivel.com</p>
+    <p><span class="bold">Shipping to:</span> {{customerCart[0].zip_code}}
+    <div class="buy_now_box" ng-click="makePurchase()">
+      <p>Buy Now</p>
+    </div>
+  </section> -->
+
+</main>

@@ -64,3 +64,5 @@ app.get('/userSearch/:searchString', controller.userSearch);
 app.get('/getCart', controller.getCart);
 app.put('/addToCart', controller.addToCart);
 app.put('/deleteCartItem', controller.deleteCartItem);
+app.post('/makePurchase', controller.makePurchase);
+app.get('/getHistory', controller.getHistory);

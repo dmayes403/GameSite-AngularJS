@@ -61,6 +61,11 @@ angular.module('gameSiteApp', ['ui.router'])
           templateUrl: '../cart/cart.html',
           controller: 'cartCtrl',
         })
+        .state('purchaseHistory', {
+          url: '/purchaseHistory',
+          templateUrl: '../purchaseHistory/purchaseHistory.html',
+          controller: 'purchaseHistoryCtrl'
+        })
 
         $urlRouterProvider.otherwise('/');
   })

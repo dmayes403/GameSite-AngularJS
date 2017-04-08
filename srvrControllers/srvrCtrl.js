@@ -170,6 +170,7 @@ module.exports = {
           ,customer.firstName
           ,customer.lastName
           ,customer.email
+          ,customer.zip_code
       	from
       		cart
               LEFT JOIN accessories ON accessories.id = cart.accessory_id

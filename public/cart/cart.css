@@ -1,4 +1,5 @@
 .cartList_main {
+  /*position: relative;*/
   width: 65%;
   margin: auto;
   padding: 50px;
@@ -23,6 +24,7 @@
   color: red;
   cursor: pointer;
   font-size: 12px;
+  width: 100px;
 }
 
 .cartList_info_container {
@@ -41,4 +43,49 @@
 
 .cart_instock_color {
   color: #F68E1F;
+}
+
+.total_cost_container {
+  /*width: 275px;*/
+  width: 15vw;
+  border: 6px solid #F68E1F;
+  border-radius: 10px;
+  position: absolute;
+  top: 300px;
+  right: 50px;
+  padding: 25px;
+  text-align: center;
+}
+
+.total_cost_container h1 {
+  border-bottom: 2px solid #007b7f;
+  padding-bottom: 10px;
+  font-size: 28px;
+}
+
+.cost_description {
+  font-size: 24px;
+}
+
+.shipping_cost {
+  border-bottom: 2px solid #007b7f;
+  padding-bottom: 10px;
+}
+
+.buy_now_box {
+  width: 80%;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #F68E1F;
+  color: white;
+  margin: auto;
+  text-align: center;
+}
+
+.buy_now_box:active {
+  background-color: #007b7f;
+}
+
+.buy_now_box p {
+  padding-top: 15px;
 }

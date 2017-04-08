@@ -15,8 +15,10 @@ a {
 }
 
 .header_container {
-  box-shadow: 0px 2px 2px black;
   position: relative;
+  top: 0;
+  width: 100vw;
+  box-shadow: 0px 2px 2px black;
   z-index: 1;
 }
 
@@ -198,7 +200,7 @@ a {
 }
 
 .footer_link_box {
-  height: 200px;
+  height: 100px;
   background-color: #007b7f;
 }
 

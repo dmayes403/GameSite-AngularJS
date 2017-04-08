@@ -11,7 +11,7 @@
         <p>Platform: {{item.platform}}</p>
       </section>
       <div class="deleteItem" ng-click="deleteCartItem(item.accessory_id, item.game_id, item.id)">
-        <p> Remove From Cart [X]</p>
+        <p> Remove [X]</p>
       </div>
     </section>
   </section>
@@ -23,12 +23,12 @@
       <section class="cartList_info_container">
         <h1 class="cartList_title">{{item.accessory_name}}</h1>
         <p class="instock_color">{{item.accessory_instock === true ? 'In Stock' : 'Out of Stock'}}</p>
-        <p>Price: {{item.accessory_thumbnail_price | currency}}</p>
-        <p>Release Date: {{item.accessory_thumbnail_releasedate}}</p>
+        <p>Price: {{item.accessory_price | currency}}</p>
+        <p>Release Date: {{item.accessory_releasedate}}</p>
         <p>Platform: {{item.platform}}</p>
       </section>
       <div class="deleteItem" ng-click="deleteCartItem(item.accessory_id, item.game_id, item.id)">
-        <p> Remove From Cart [X]</p>
+        <p> Remove [X]</p>
       </div>
     </section>
   </section>
@@ -45,11 +45,24 @@
         <p>Platform: {{item.platform}}</p>
       </section>
       <div class="deleteItem" ng-click="deleteCartItem(item.accessory_id, item.game_id, item.id)">
-        <p> Remove From Cart [X]</p>
+        <p> Remove [X]</p>
       </div>
     </section>
   </section>
 
+  <section class="total_cost_container">
+    <h1>Sub Total:</h1>
+    <p class="cost_description">{{value | currency}}</p>
+    <p>Tax: {{value*.07 | currency}}</p>
+    <p class="shipping_cost">Shipping: {{17.50 | currency}}</p>
+    <h2>Total:</h2>
+    <p class="cost_description">{{(value*1.07) + 17.50 | currency}}</p>
+    <p>Ships from and sold by Swivel.com</p>
+    <p><span class="bold">Shipping to:</span> {{customerCart[0].zip_code}}
+    <!-- <p><span class="bold">Shipping to:</span> {{customerCart[0].zip_code === true ? customerCart[0].zip_code : 'Sign in to have item shipped.'}} -->
+    <div class="buy_now_box">
+      <p>Buy Now</p>
+    </div>
+  </section>
 
-  <h1>{{value}}</h1>
 </main>

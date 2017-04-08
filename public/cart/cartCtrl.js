@@ -1,5 +1,5 @@
 angular.module('gameSiteApp')
-    .controller('cartCtrl', function($scope, cartSrvc, $stateParams){
+    .controller('cartCtrl', function($scope, cartSrvc, $stateParams, $q){
         // $scope.getCart = function(){
         //   cartSrvc.getCart($stateParams.customerId).then(function(response){
         //     $scope.customerCart = response;
@@ -43,12 +43,20 @@ angular.module('gameSiteApp')
 
         $scope.makePurchase = function(){
             cartSrvc.getCart().then(function(response){
-              $scope.cartArr = response;
-              $scope.cartArr.map((item) => {
-                cartSrvc.makePurchase(item.accessory_id,item.game_id,item.console_id);
-                cartSrvc.deleteCartItem(item.accessory_id,item.game_id,item.console_id);
-            })
-            $scope.getCart();
+              console.log('PURCHASING');
+              var cartArr = response;
+              // var purchasePromises = cartArr.map((item) => {
+              //   return cartSrvc.makePurchase(item.accessory_id,item.game_id,item.console_id);
+              // });
+              // $q.all(purchasePromises).then(function(){
+                var deletionPromises = cartArr.map((item) => {
+                  return cartSrvc.deleteCartItem(item.accessory_id,item.game_id,item.console_id);
+                });
+                $q.all(deletionPromises).then(function(){
+                  console.log('DONE DELETING');
+                  $scope.getCart();
+                });
+              // });
           })
         }
     })

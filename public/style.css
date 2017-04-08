@@ -196,8 +196,9 @@ a {
 }
 
 .footer_container {
-  /*position: absolute;
-  bottom: 0px;*/
+  width: 100%;
+  /*position: absolute;*/
+  bottom: 0px;
   margin-top: 100px;
 }
 

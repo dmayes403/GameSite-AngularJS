@@ -3,7 +3,8 @@
   width: 65%;
   margin: auto;
   padding: 50px;
-  margin-top: 100px;
+  /*margin-top: 100px;*/
+  min-height: 700px;
 }
 
 .customerName {
@@ -59,6 +60,7 @@
   right: 50px;
   padding: 25px;
   text-align: center;
+  z-index: 1;
 }
 
 .total_cost_container h1 {

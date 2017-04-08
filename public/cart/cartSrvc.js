@@ -14,10 +14,10 @@ angular.module('gameSiteApp')
 
         this.deleteCartItem = function(accessoryID, itemID, consoleID){
           console.log(accessoryID, itemID, consoleID)
-          $http.put('/deleteCartItem', {accessoryID:accessoryID, itemID:itemID, consoleID:consoleID})
+          return $http.put('/deleteCartItem', {accessoryID:accessoryID, itemID:itemID, consoleID:consoleID})
         }
 
         this.makePurchase = function(accessoryID, gameID, consoleID){
-          $http.post('/makePurchase', {accessoryID:accessoryID, gameID:gameID, consoleID:consoleID});
+          return $http.post('/makePurchase', {accessoryID:accessoryID, gameID:gameID, consoleID:consoleID});
         }
     })

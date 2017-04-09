@@ -6,6 +6,9 @@ const massive = require('massive');
 const passport = require('passport');
 const FacebookStrategy = require('passport-facebook').Strategy;
 const facebookConfig = require('./config');
+const stripe = require('stripe')(
+  "sk_test_BQokikJOvBiI2HlWgH4olfQ2"
+)
 const port = 3333;
 
 const app = express();
@@ -42,6 +45,26 @@ passport.deserializeUser(function(obj, done) {
   done(null, obj);
 });
 
+// app.get('/paysuccess', function(req, res){
+//   console.log('Payment Successful!');
+// })
+//
+// app.post('/charge', function(req, res){
+//     var token = req.body.stripeToken;
+//     var chargeAmount = req.body.chargeAmount;
+//     var charge = stripe.charges.create({
+//       amount: chargeAmount,
+//       currency: 'usd',
+//       source: token
+//     }, function(err, charge){
+//       if(err & err.type === "StripeCardError"){
+//         console.log('Your card was declined');
+//       }
+//   })
+//   console.log("Your payment was successful")
+//   res.redirect('/paysuccess')
+// })
+
 app.listen(port, () => {
   console.log(`Connected on port: ${port}`)
 })
@@ -66,3 +89,4 @@ app.put('/addToCart', controller.addToCart);
 app.put('/deleteCartItem', controller.deleteCartItem);
 app.post('/makePurchase', controller.makePurchase);
 app.get('/getHistory', controller.getHistory);
+app.get('https://api.stripe.com')

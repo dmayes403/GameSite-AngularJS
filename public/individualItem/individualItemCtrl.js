@@ -25,4 +25,6 @@ angular.module('gameSiteApp')
         alert(`${itemName} has been added to your cart!`)
       }
 
+      $scope.showCartAdd = false;
+
     })

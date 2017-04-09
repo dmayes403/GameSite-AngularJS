@@ -21,12 +21,20 @@
       <p class="individualItem_price"><span class="bold">Price:</span> {{individualItem.price | currency}}</p>
       <p class="individualItem_instock">{{individualItem.instock === true ? 'In stock' : 'Out of Stock'}}</p>
       <!-- <div class="add_cart" ng-click="addToCart(individualItem.id, individualItem.platformid, 'games'); alertCartAdd(individualItem.name)"> -->
-      <div class="add_cart" ng-click="addToCart(null, individualItem.id, individualItem.platformid); alertCartAdd(individualItem.name)">
+      <div class="add_cart" ng-click="addToCart(null, individualItem.id, individualItem.platformid); showCartAdd=true;">
         <span>Add To Cart</span>
         <!-- <span>Add To Cart</span> -->
       </div>
       <p>Ships from and sold by Swivel.com</p>
       <p><span class="bold">Shipping to:</span> {{'' === true ? 'Zip Code' : 'Sign in to have item shipped.'}}
+    </section>
+  </section>
+  <section class="accept_cart_container" ng-show="showCartAdd">
+    <section class="cart_confirm">
+      <p>You've added {{individualItem.name}} to your cart!</p>
+      <div class="accept_cart_add" ng-click="showCartAdd=false">
+        <p>OK</p>
+      </div>
     </section>
   </section>
 </main>
@@ -88,4 +96,6 @@
       <p><span class="bold">Shipping to:</span> {{'' === true ? 'Zip Code' : 'Sign in to have item shipped.'}}
     </section>
   </section>
+
+
 </main>

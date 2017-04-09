@@ -45,10 +45,10 @@ angular.module('gameSiteApp')
             cartSrvc.getCart().then(function(response){
               console.log('PURCHASING');
               var cartArr = response;
-              // var purchasePromises = cartArr.map((item) => {
-              //   return cartSrvc.makePurchase(item.accessory_id,item.game_id,item.console_id);
-              // });
-              // $q.all(purchasePromises).then(function(){
+              var purchasePromises = cartArr.map((item) => {
+                return cartSrvc.makePurchase(item.accessory_id,item.game_id,item.console_id);
+              });
+              $q.all(purchasePromises).then(function(){
                 var deletionPromises = cartArr.map((item) => {
                   return cartSrvc.deleteCartItem(item.accessory_id,item.game_id,item.console_id);
                 });
@@ -56,7 +56,7 @@ angular.module('gameSiteApp')
                   console.log('DONE DELETING');
                   $scope.getCart();
                 });
-              // });
+              });
           })
         }
     })

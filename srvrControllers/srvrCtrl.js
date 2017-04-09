@@ -126,7 +126,7 @@ module.exports = {
         console.log(err);
         return res.status(500).send('Internal Server Error')
       }
-      console.log(item);
+      // console.log(item);
       return res.send(item)
     })
   },
@@ -142,10 +142,10 @@ module.exports = {
               values ('${req.user.id}', ${req.body.accessoryID}, ${req.body.gameID}, ${req.body.consoleID})`
     , function(err, item){
           if (err) {
-            console.log(err);
+            // console.log(err);
             return res.status(500).send('Internal Server Error')
           }
-          console.log(item);
+          // console.log(item);
           return res.send(item)
           })
   },

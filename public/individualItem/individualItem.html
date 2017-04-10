@@ -58,12 +58,20 @@
       <p class="individualItem_price">Price: {{individualItem.price | currency}}</p>
       <p class="individualItem_instock">{{individualItem.instock === true ? 'In stock' : 'Out of Stock'}}</p>
       <!-- <div class="add_cart" ng-click="addToCart(individualItem.id, individualItem.platformid, 'accessories')"> -->
-      <div class="add_cart" ng-click="addToCart(individualItem.id, null, individualItem.platformid); alertCartAdd(individualItem.name)">
+      <div class="add_cart" ng-click="addToCart(individualItem.id, null, individualItem.platformid); showCartAdd=true;">
         <span>Add To Cart</span>
         <!-- <span>Add To Cart</span> -->
       </div>
       <p>Ships from and sold by Swivel.com</p>
       <p><span class="bold">Shipping to:</span> {{'' === true ? 'Zip Code' : 'Sign in to have item shipped.'}}
+    </section>
+  </section>
+  <section class="accept_cart_container" ng-show="showCartAdd">
+    <section class="cart_confirm">
+      <p>You've added {{individualItem.name}} to your cart!</p>
+      <div class="accept_cart_add" ng-click="showCartAdd=false">
+        <p>OK</p>
+      </div>
     </section>
   </section>
 </main>
@@ -88,12 +96,20 @@
       <p class="individualItem_price">Price: {{individualItem.price | currency}}</p>
       <p class="individualItem_instock">{{individualItem.instock === true ? 'In stock' : 'Out of Stock'}}</p>
       <!-- <div class="add_cart" ng-click="addToCart(individualItem.id, individualItem.platformid, 'consoles')"> -->
-      <div class="add_cart" ng-click="addToCart(null, null, individualItem.platformid); alertCartAdd(individualItem.name)">
+      <div class="add_cart" ng-click="addToCart(null, null, individualItem.platformid); showCartAdd=true;">
         <span>Add To Cart</span>
         <!-- <span>Add To Cart</span> -->
       </div>
       <p>Ships from and sold by Swivel.com</p>
       <p><span class="bold">Shipping to:</span> {{'' === true ? 'Zip Code' : 'Sign in to have item shipped.'}}
+    </section>
+    <section class="accept_cart_container" ng-show="showCartAdd">
+      <section class="cart_confirm">
+        <p>You've added {{individualItem.name}} to your cart!</p>
+        <div class="accept_cart_add" ng-click="showCartAdd=false">
+          <p>OK</p>
+        </div>
+      </section>
     </section>
   </section>
 

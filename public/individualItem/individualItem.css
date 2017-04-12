@@ -3,6 +3,7 @@
   margin: auto;
   padding: 50px;
   margin-top: 150px;
+  min-height: 80vh;
 }
 
 .individual_item_container {
@@ -91,11 +92,13 @@
 
 .accept_cart_container {
   position: absolute;
-  top: 150px;
+  /*top: 150px;*/
+  top: 50%;
+  transform: translateY(-50%);
   left: 0px;
   margin: 0px;
   width: 101%;
-  height: 93%;
+  /*height: 60vh;*/
   background-color: rgba(	105,	105,	105, .5)
 }
 
@@ -108,9 +111,10 @@
   color: white;
   width: 400px;
   height: 300px;
-  top: 250px;
+  /*top: 250px;*/
+  top: 50%;
   right: 50%;
-  transform: translateX(50%);
+  transform: translateX(50%) translateY(-50%);
   margin: auto;
   z-index: 9;
 }
